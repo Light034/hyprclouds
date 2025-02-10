@@ -1,3 +1,21 @@
+I'm learning how to use github and I thought this was the perfect time to test making changes and doing pull requests.
+
+I plan on making changes as to allow/improve the implementation of this rice into other window managers, my main objective being wayfire since that is what I use.
+
+### To Do: 
+
+- [ ] List all dependencies.
+- [ ] Create basic install instructions.
+- [ ] Fix paths.
+- [ ] Create global config.
+- [ ] Document each module's function.
+- [ ] Implement logic to detect active compositor.
+- [ ] Remove hardcoded paths and move them to a variable inside the master config.
+- [ ] Rework directory layout.
+- [ ] Create install script.
+
+#
+
 Compositor: hyprland
 
 Widgets: eww
