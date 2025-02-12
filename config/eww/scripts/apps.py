@@ -23,14 +23,20 @@ DESKTOP_DIRS = [
 ]
 
 def get_gtk_icon(icon_name):
+    if not icon_name:  # Handle None or empty string
+        return None
+
     theme = Gtk.IconTheme.get_default()
     icon_info = theme.lookup_icon(icon_name, 128, 0)
 
     if icon_info is not None:
         return icon_info.get_filename()
 
+    return None  # Ensure the function always returns a valid value
+    
 def get_desktop_entries():
     desktop_files = []
+
     for directory in DESKTOP_DIRS:
         if os.path.exists(directory):
             desktop_files.extend(glob.glob(os.path.join(directory, "*.desktop")))
@@ -39,6 +45,7 @@ def get_desktop_entries():
     for file_path in desktop_files:
         parser = ConfigParser()
         parser.read(file_path)
+
 
         if parser.getboolean("Desktop Entry", "NoDisplay", fallback=False):
             continue
@@ -115,7 +122,6 @@ if __name__ == "__main__":
             entries = get_desktop_entries()
             filtered = filter_entries(entries, query)
             update_eww({"apps": entries['apps'], "pinned": entries['pinned'], "search": True, "filtered": filtered})
-
         elif sys.argv[1] == "--add-pin":
             name = sys.argv[2]
             icon = sys.argv[3]
