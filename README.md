@@ -1,6 +1,6 @@
-I'm learning how to use github and I thought this was the perfect time to test making changes and doing pull requests.
+I'm learning how to use github and I thought this was the perfect time to try making changes and doing pull requests.
 
-I plan on making changes as to allow/improve the implementation of this rice into other window managers, my main objective being wayfire since that is what I use.
+I plan on making changes as to allow/improve the implementation of this rice into other compositors, my main objective being wayfire since that is what I use.
 
 ### To Do: 
 
