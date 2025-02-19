@@ -1,3 +1,4 @@
+;; Description: Module to control the brightness of the screen, mainly for laptops.
 (defvar brightness-control "false")
 (defpoll current-brightness :interval "1s" :initial "0" "echo $(( $(brightnessctl get) * 100 / $(brightnessctl max) ))")
 

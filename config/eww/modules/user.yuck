@@ -1,3 +1,4 @@
+;; why is this called user.
 (defwidget user []
     (box :orientation "h" :space-evenly true :class "user-box"
         (box :orientation "h" :space-evenly false :halign "start"

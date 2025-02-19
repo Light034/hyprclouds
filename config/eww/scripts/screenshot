@@ -1,5 +1,8 @@
 #!/bin/bash
- 
+# This script takes a screenshot and saves it into a directory.
+# ToDo: Make SAVEDIR easily configurable
+# Depends on grim, slurp, wl-copy, notify-send, swappy.
+
 SAVEDIR=~/Pictures/Screenshots
 mkdir -p -- "$SAVEDIR"
 FILENAME="$SAVEDIR/$(date +'%Y-%m-%d-%H%M%S_screenshot.png')"

@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# This script toggles the calendar widget in eww.
+# @TODO: Rewrite paths.
+
 calendar(){
 LOCK_FILE="$HOME/.cache/eww-calendar.lock"
 EWW_BIN="$HOME/eww/target/release/eww"

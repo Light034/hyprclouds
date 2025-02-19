@@ -15,6 +15,7 @@
                    :space-evenly false
                    :class "tools-box"
                    (button :class "picker"
+                   ;; ToDo: Update directory for scripts and make unify them. Also to update that the path doesn't brake upon changing other configs.
                           :onclick "sleep 0.1 && scripts/picker.sh &"
                           (label :text "󰃉"))
                    (button :class "screenshot"

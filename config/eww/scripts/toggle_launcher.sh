@@ -1,20 +1,25 @@
 #!/bin/bash
 
-
 state=$(eww get open_launcher)
 
 open_launcher() {
-    if [[ -z $(eww windows | grep '*launcher') ]]; then
-        eww open launcher
+    if eww list-windows | grep -q "launcher"; then
+        sleep 0.1
+        eww open launcher --arg monitor="0"
     fi
+    sleep 0.1
     eww update open_launcher=true
-    sleep 0.5 && ~/.config/eww/scripts/apps.py &
+    pkill -f "apps.py"  # Kill previous instances
+    ~/.config/eww/scripts/apps.py &
+    ~/.config/eww/scripts/taskbar_height.sh
 }
 
 close_launcher() {
-    eww close launcher
     eww update open_launcher=false
+    eww close launcher
+    pkill -f "apps.py"  # Kill previous instances
     ~/.config/eww/scripts/apps.py &
+    ~/.config/eww/scripts/taskbar_height.sh
 }
 
 case $1 in
@@ -24,6 +29,9 @@ case $1 in
     open)
         open_launcher
         exit 0;;
+    *)
+        echo "Usage: $0 {open|close}"
+        exit 1;;
 esac
 
 case $state in

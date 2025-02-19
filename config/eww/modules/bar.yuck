@@ -1,5 +1,6 @@
+;; Description: Main bar widget that contains clock, workspaces, tray button, language, expand, indicator, and power widgets.
 
-
+;; Bar widget and the configuration of the widgets.
 (defwidget bar []
     (box :class "bar-widget" :orientation "h" :space-evenly true
 
@@ -12,13 +13,12 @@
 
         (box :orientation "h" :space-evenly false :halign "center"
           
-             (workspaces)
+        (open_apps)
         )
 
         (box :orientation "h" :space-evenly false :halign "end"
        
             (tray_button)
-      
             (language)
             (expand)
             (indicator)
@@ -29,119 +29,133 @@
     
 )
 
-(defwindow topside-edge
+;; Corner decorations for main screen. Not sure what they are doing here but whatever lol
+(defwindow topside-edge [ monitor ]
  :exclusive true
-  :monitor 0
+ :active false
+ :focusable false
+  :monitor "${monitor}"
   :geometry (geometry 
               :x "0px"
-                :y "-16px"
+                :y "-1.1%"
               :anchor "center top")
   (box :class "topside edge")  
 )
 
 
-(defwindow leftside-edge
+(defwindow leftside-edge [ monitor ]
  :exclusive true
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "-16px"
+              :x "-0.6%"
                 :y "0px"
               :anchor "center left")
   (box :class "leftside edge")  
 )
 
-(defwindow rightside-edge
+(defwindow rightside-edge [ monitor ]
  :exclusive true
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "-16px"
+              :x "-0.6%"
                 :y "0px"
               :anchor "center right")
   (box :class "rightside edge")  
 )
 
 
-(defwindow corner-left
+(defwindow corner-left [ monitor ]
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "362"
-              :y "-0px"
+              :x "19.1%"
+              :y "0px"
               :anchor "bottom left")
   (box :class "corner left")  
 )
 
-(defwindow corner-right
+(defwindow corner-right [ monitor ]
 
   :stacking "fg"
-  :monitor 0
+  :focusable false
+  :exclusive false
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "348"
+              :x "18.9%"
               :y "-0px"
               :anchor "bottom right")
+              (revealer :transition "slideup" :reveal {open_cc} :duration {ANIM_DURATION}
   (box :class "corner right")  
+              )
 )
-(defwindow topbgcorner-left
+(defwindow topbgcorner-left [ monitor ]
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :y "-0px"
+              :y "-1.1%"
+              :x "-0.59%"
               :anchor "top left")
   (box :class "topbgcorner left")  
 )
 
-(defwindow topbgcorner-right
+(defwindow topbgcorner-right [ monitor ]
 
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "0"
-              :y "0px"
+              :x "-0.59%"
+              :y "-1.1%"
               :anchor "top right")
   (box :class "topbgcorner right")  
 )
 
-(defwindow bgcorner-left
+(defwindow bgcorner-left [ monitor ]
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :y "-0px"
+              :x "-0.6%"
+              :y "0%"
               :anchor "bottom left")
   (box :class "bgcorner left")  
 )
 
-(defwindow bgcorner-right
+(defwindow bgcorner-right [ monitor ]
 
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "0"
+              :x "-0.6%"
               :y "0px"
               :anchor "bottom right")
   (box :class "bgcorner right")  
 )
-(defwindow topcorner-left
+(defwindow topcorner-left [ monitor ]
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
+  :focusable false
+  :exclusive false
   :geometry (geometry 
-              :y "383px"
+              :x "-0.6%"
+              :y "31.5%"
               :anchor "bottom left")
   (box :class "bgcorner left")  
 )
 
-(defwindow topcorner-right
+(defwindow topcorner-right [ monitor ]
 
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "0"
-              :y "566px"
+              :x "-0.6%"
+              :y "60.2%"
               :anchor "bottom right")
+              (revealer :transition "slideleft" :reveal {open_cc} :duration {ANIM_DURATION}
   (box :class "bgcorner right")  
 )
-(defwindow volcorner-left
+)
+(defwindow volcorner-left [ monitor ]
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
                :x "792"
               :y "0"
@@ -149,33 +163,37 @@
   (box :class "bgcorner left")  
 )
 
-(defwindow volcorner-right
+(defwindow volcorner-right [ monitor ]
 
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
               :x "792"
               :y "0"
               :anchor "bottom right")
   (box :class "bgcorner right")  
 )
-(defwindow powercorner-left
-  :stacking "fg"
-  :monitor 0
+(defwindow powercorner-left [ monitor ]
+  :stacking "fg" 
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "349"
-              :y "-0px"
+              :x "29%"
+              :y "-1.1%"
               :anchor "top left")
-  (box :class "powercorner left")  
+  (revealer :transition "slidedown" :reveal {open_powermenu} :duration {ANIM_DURATION}
+    (box :class "powercorner left")  
+  )
 )
 
-(defwindow powercorner-right
+(defwindow powercorner-right [ monitor ]
 
   :stacking "fg"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "349"
-                :y "-0px"
+              :x "29%"
+                :y "-1.1%"
               :anchor "top right")
-  (box :class "powercorner right")  
+  (revealer :transition "slidedown" :reveal {open_powermenu} :duration {ANIM_DURATION}
+    (box :class "powercorner right")
+  )  
 )

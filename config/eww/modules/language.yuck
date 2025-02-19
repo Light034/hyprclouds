@@ -1,3 +1,4 @@
+;; This module is used to switch between keyboard layouts, need to fix path.
 (defwidget language []
     (button :class "language" :onclick "scripts/switch_kb_layout.sh &"
         (label :text {kb_layout})

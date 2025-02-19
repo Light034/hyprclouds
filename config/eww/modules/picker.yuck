@@ -1,3 +1,4 @@
+;; Color picker.
 (defwidget picker []
     (button :onclick "sleep 0.1 && scripts/picker.sh &" :class "picker" "󰃉")
 )

@@ -1,12 +1,15 @@
+;; Again, update the path to be a global variable and change path for scripts.
+;; I need to figure out what calls this widget.
 (defwidget indicator []
-    (button :onclick "scripts/toggle_control_center.sh" :class "indicator"
+    (eventbox :onscroll "~/.config/eww/scripts/volume-change.sh {}" :timeout "60s"
+    (button :onclick "scripts/toggle_control_center.sh" :class "indicator" :timeout "5s"
         (box :orientation "h" :space-evenly false
             (recorder_icon)
             (network_icon)
             (do-not-disturb_icon)
             (theme_icon)
             (volume_icon)
-
+            )
         )
     )
 )
@@ -23,7 +26,7 @@
 
 (defwidget network_icon []
     (state_icon :condition true
-                :text {network.essid == "lo" ? "󰤭" : network.signal == "" ? "󰤩" : network.signal < 25 ? "󰤟" : network.signal < 50 ? "󰤢" : network.signal < 75 ? "󰤥" : "󰤨"}
+                :text {network.essid == "lo" ? "󰤭" : network.type == "bridge" ? "󰈀" : network.type == "ethernet" ? "󰈀" : network.essid == "bridge" ? "󰈀" : network.signal == "" ? "󰤩" : network.signal < 25 ? "󰤟" : network.signal < 50 ? "󰤢" : network.signal < 75 ? "󰤥" : "󰤨"}
     )
 )
 
@@ -40,6 +43,7 @@
 )
 
 (defwidget volume_icon []
+
     (state_icon :condition true
                 :text {volume == "muted" ? "󰸈" : volume < 33 ? "" : volume < 67 ? "" : ""}
     

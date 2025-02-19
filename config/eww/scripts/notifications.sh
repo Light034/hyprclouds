@@ -1,4 +1,7 @@
 #!/bin/bash
+# This script provides a wrapper around the org.freedesktop.Notifications interface.
+# Depends on dbus-send.
+
 
 dismiss() {
     dbus-send --session --type=method_call \

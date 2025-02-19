@@ -3,8 +3,8 @@
 state=$(eww get open_tray)
 
 open_tray() {
-    if [[ -z $(eww windows | grep '*tray') ]]; then
-        eww open tray
+    if [[ -z $(eww list-windows | grep '*tray') ]]; then
+        eww open tray --arg monitor="0"
     fi
     eww update open_tray=true
 }

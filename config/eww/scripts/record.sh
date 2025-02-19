@@ -1,4 +1,7 @@
 #!/bin/bash
+# This scripts controls the recording of the screen.
+# To do: allow user to select recording format, resolution, and framerate.
+# Depends on wf-recorder, slurp, and notify-send.
 
 notify-send "Recording started"
 

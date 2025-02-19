@@ -2,10 +2,11 @@
 
 import requests, json, sys, time
 
+#ToDo: Move this to master config file for it to be read.
 API_TOKEN = "69c655f5c49d7a1612da1c5a0617d786"
 UNITS = 'metric'
 LANG = 'en'
-CITY = "Nur-Sultan"
+CITY = "Mexico City"
 
 def get_icon(code):
     icons = {

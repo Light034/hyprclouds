@@ -3,7 +3,7 @@
 # This script for selecting wallpapers (SUPER W)
 
 # Wallpapers Path
-wallpaperDir="/home/alien/Documents/colorswall/Somecool"
+wallpaperDir="/home/gonzalo/Wallpapers"
 themesDir="$HOME/.config/rofi/themes"
 
 # Transition config

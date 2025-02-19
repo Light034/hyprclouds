@@ -1,5 +1,5 @@
-
 ;; Workspaces ;;
+;; ToDo: Make this module work with other compositors.
 (defwidget workspaces []
   (eventbox :onscroll "sh ~/.config/eww/scripts/change-active-workspace.sh {} ${current_workspace}"
     (box :orientation "h"

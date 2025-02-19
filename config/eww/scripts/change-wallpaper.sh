@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# @TODO: Rewrite paths and preferably use XDG scheme.
+# Dependencies: zenity, pywal, eww, hyprpaper
+# @TODO: Add support for random wallpaper setting
+
 # Get the wallpaper filename passed as an argument
 SELECTED_WALLPAPER=$1
 WALLPAPER_DIR="$HOME/wallpapers"

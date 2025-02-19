@@ -41,7 +41,7 @@ python ${HOME}/.config/hypr/scripts/material-colors/export-colrsW.py
 python ${HOME}/.config/hypr/scripts/kitty-colors/kitty-dark.py
 python ${HOME}/.config/hypr/scripts/kitty-colors/kitty-light.py
 python ${HOME}/.config/hypr/scripts/kitty-colors/selector.py
-${HOME}/.config/hypr/scripts/Discord/dark.sh
+#${HOME}/.config/hypr/scripts/Discord/dark.sh
 ${HOME}/.cache/material-you/color-generator.sh
 ${HOME}/.config/hypr/scripts/rofi_light_dark/lightcolors.sh
 ${HOME}/.config/hypr/scripts/rofi_light_dark/darkcolors.sh

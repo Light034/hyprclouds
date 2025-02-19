@@ -1,20 +1,17 @@
-
+;; Description: Widget to the control center and its modules, I think this widget is split into multiple files, need to confirm and fix.
 
 (defwidget control_center []
-  (box :orientation "v" 
-       :space-evenly false
   
+  (box :orientation "h" 
+       :space-evenly false
     (box :orientation "v" 
          :space-evenly false 
          :class "control-center"
-            (pfp)
-
-      (music)
-      (notifications)
-    (user)
-      (volume_control_center)
-      (quick_settings)
-    
+          (pfp)
+          (music)
+          (notifications)
+          (volume_control_center)
+          (quick_settings)
+      )
     )
   )
-)

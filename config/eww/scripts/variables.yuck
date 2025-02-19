@@ -1,6 +1,7 @@
 ; VARS
 
-(defvar open_control_center false)
+(defvar taskbar_offset "0")
+(defvar open_cc false)
 (defvar open_osd false)
 (defvar open_launcher false)
 (defvar open_tray false)

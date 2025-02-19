@@ -8,5 +8,5 @@
     (box :orientation "horizontal"
          :space-evenly false
       (button :class "power" 
-              :onclick "/home/alien/.config/eww/scripts/powermenu.sh &"
+              :onclick "/home/gonzalo/.config/eww/scripts/powermenu.sh &"
         (label :text "⏻")))))

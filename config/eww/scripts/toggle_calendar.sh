@@ -3,7 +3,7 @@
 # Function to toggle eww widgets
 toggle_widget() {
     local widget="$1"
-    eww open "$widget" --toggle
+    eww open "$widget" --toggle --arg monitor="0"
 }
 
 # Widgets to toggle

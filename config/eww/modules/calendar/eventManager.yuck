@@ -1,3 +1,4 @@
+;; Description: A simple event manager widget that displays a list of events
 (defwidget eventEntry [icon date content ?urgency]
   (box
     :class "eventBox"

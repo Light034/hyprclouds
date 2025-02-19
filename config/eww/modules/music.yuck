@@ -1,5 +1,9 @@
+;; Music module, displays current playing song, artist, album art, and progress. Need to fix paths.
+;; Depends on playerctl, eww, and mpris.
+
 (defwidget music []
-    (revealer :reveal {mpris == "{}" ? false : mpris.name == "" ? false : true} :duration {ANIM_DURATION}
+    (box :orientation "h" :space-evenly true
+(revealer :transition "crossfade" :reveal {mpris == "{}" ? false : mpris.name == "" ? false : true} :duration {ANIM_DURATION}
         (box :orientation "v" :class "music" :space-evenly false
             (box :orientation "h" :space-evenly false
                 (box :orientation "h" :space-evenly false :class "music-image" :style "background-image: url('${mpris.artUrl}');")
@@ -14,9 +18,9 @@
                 )
             )
             (box :orientation "v" :space-evenly false :class "music-scale-box" :visible {mpris.length == "" ? false : true}
-                (scale :min 0 :max {mpris.length} :active true :value {mpris_positions[mpris.name].position} :onchange "playerctl position {}" :class "music-scale")
+                (scale :min 0 :max {mpris.length} :active true :value {mpris_positions[mpris?.name]?.position} :onchange "playerctl position {}" :class "music-scale")
                 (box :orientation "h" :space-evenly false :hexpand true
-                    (label :hexpand true :class "music-strtime" :text {mpris_positions[mpris.name].positionStr} :halign "start")
+                    (label :hexpand true :class "music-strtime" :text {mpris_positions[mpris?.name]?.positionStr} :halign "start")
                     (label :hexpand true :class "music-strtime" :text {mpris.lengthStr} :halign "end")
                 )
             )
@@ -28,4 +32,4 @@
                     
         )
     )
-)
+))

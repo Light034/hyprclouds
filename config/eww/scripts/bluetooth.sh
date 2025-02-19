@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script determines the status of the bluetooth device and returns the appropriate icon and status message.
+# Depends on: bluetoothctl, dunstify, upower.
+
 toggle() {
     STATUS="$(bluetoothctl show | grep Powered | awk '{print $2}')"
     if [ $STATUS == "yes" ]; then

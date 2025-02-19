@@ -1,4 +1,7 @@
 #!/usr/bin/python
+# This script is a notification daemon for eww. It uses dbus to recieve notifications from other applications and displays them as popups.
+# Dependencies: python-dbus, python-gobject, python-gi, python-gtk, python-gdk-pixbuf.
+
 import gi
 gi.require_version("GdkPixbuf", "2.0")
 gi.require_version("Gtk", "3.0")

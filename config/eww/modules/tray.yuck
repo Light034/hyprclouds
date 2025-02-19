@@ -1,7 +1,9 @@
+;; This module is responsible for the tray widget and tray button.
+;; To be tested.
 (defwidget tray []
     (revealer :transition "slideup" :reveal {open_tray} :duration {ANIM_DURATION}
         (box :class "tray_box" :orientation "h" :space-evenly false
-            (systray :hexpand true :halign "center" :pack-direction "left")
+            (systray :hexpand true :vexpand true :halign "center" :spacing 10)
         )
     )
 )

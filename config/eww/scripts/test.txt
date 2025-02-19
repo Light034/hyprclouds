@@ -1,0 +1,288 @@
+=========================
+View ID: 4
+Client PID: -1
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: nil
+Title: nil
+Role: TOPLEVEL
+Geometry: 80,51 40x69
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 7
+Client PID: 3308
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: KeePassXC
+Title: MainDatabase.kdbx [Locked] - KeePassXC
+Role: TOPLEVEL
+Geometry: 791,373 979x651
+Xwayland: true
+Focused: false
+=========================
+=========================
+View ID: 9
+Client PID: -1
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: nil
+Title: nil
+Role: TOPLEVEL
+Geometry: 80,51 40x69
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 11
+Client PID: 3383
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: Alacritty
+Title: gonzalo@gonzalo-pc:~
+Role: TOPLEVEL
+Geometry: 592,238 1376x921
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 55
+Client PID: 6556
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: codium
+Title: apps.py - hyprclouds - VSCodium
+Role: TOPLEVEL
+Geometry: 330,256 1715x1001
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 112
+Client PID: 7995
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: Alacritty
+Title: gonzalo@gonzalo-pc:~
+Role: TOPLEVEL
+Geometry: 592,237 1376x921
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 3000
+Client PID: 39252
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: Alacritty
+Title: gonzalo@gonzalo-pc:~
+Role: TOPLEVEL
+Geometry: 592,237 1376x921
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 3002
+Client PID: 39608
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: Alacritty
+Title: gonzalo@gonzalo-pc:~
+Role: TOPLEVEL
+Geometry: 1055,240 1376x921
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 4909
+Client PID: 53106
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: wallpaper
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5042
+Client PID: 85008
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: Alacritty
+Title: gonzalo@gonzalo-pc:~
+Role: TOPLEVEL
+Geometry: 975,340 1376x921
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5061
+Client PID: 86334
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: thunar
+Title: wofi - Thunar
+Role: TOPLEVEL
+Geometry: 680,248 1141x844
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5085
+Client PID: 87583
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: firefox
+Title: command line - How to remove specific character from file - Ask Ubuntu — Mozilla Firefox
+Role: TOPLEVEL
+Geometry: 20,20 2520x1354
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5091
+Client PID: 90107
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: Alacritty
+Title: wf-info -l > test.txt
+Role: TOPLEVEL
+Geometry: 1280,697 1260x677
+Xwayland: false
+Focused: true
+=========================
+=========================
+View ID: 5098
+Client PID: 118090
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: Alacritty
+Title: gonzalo@gonzalo-pc:~
+Role: TOPLEVEL
+Geometry: 592,237 1376x921
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5160
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: 0,-1
+App ID: gtk-layer-shell
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5161
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: gtk-layer-shell
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5162
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: eww
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5163
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: gtk-layer-shell
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5164
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: eww
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5165
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: gtk-layer-shell
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5166
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: 1,0
+App ID: gtk-layer-shell
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5167
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: -1,0
+App ID: gtk-layer-shell
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5168
+Client PID: 74159
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: gtk-layer-shell
+Title: layer-shell
+Role: DESKTOP_ENVIRONMENT
+Geometry: 0,0 0x0
+Xwayland: false
+Focused: false
+=========================
+=========================
+View ID: 5178
+Client PID: 145789
+Output: DP-3(ID: 4907)
+Workspace: 0,0
+App ID: Alacritty
+Title: gonzalo@gonzalo-pc:~
+Role: TOPLEVEL
+Geometry: 592,237 1376x921
+Xwayland: false
+Focused: false
+=========================

@@ -1,3 +1,5 @@
+;; Nice module that displays the volume.
+;; ToDo: make this appear when volume is changed.
 (defwidget volume_osd []
     (revealer :transition "slideup" :reveal {open_osd} :duration {ANIM_DURATION}
         (box :orientation "h" :class "volume-osd" :space-evenly false
@@ -17,7 +19,7 @@
     (box :orientation "h" :class "volume-control-center" :space-evenly false
         (volume_scale)
         (button :class "volume-mute ${volume == 'muted' ? 'active' : ''}" :onclick "pamixer -t" "󰝟")
-        (button :class "volume-arrow" :onclick "scripts/toggle_control_center.sh close && pavucontrol &" "󰅂")
+        (button :class "volume-arrow" :onclick "carla &" "󰅂")
     )
 )
 

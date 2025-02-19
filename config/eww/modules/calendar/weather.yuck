@@ -1,4 +1,4 @@
-
+;; Description: A simple weather widget that displays the current weather and a quote.
 (defwidget calendar []
     (box
       :space-evenly false

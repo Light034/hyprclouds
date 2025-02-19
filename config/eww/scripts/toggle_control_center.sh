@@ -1,9 +1,9 @@
 #!/bin/bash
-state=$(eww get open_control_center)
+state=$(eww get open_cc)
 
 case $1 in
     close)
-        eww update open_control_center=false
+        eww update open_cc=false
         eww close control_center
         eww close corner-right
         eww close topcorner-right
@@ -13,15 +13,16 @@ esac
 
 case $state in
     true)
-        eww update open_control_center=false
+        eww update open_cc=false
+        sleep 0.5
         eww close control_center
         eww close corner-right
         eww close topcorner-right
         ;;
     false)
-        eww open control_center
-        eww open corner-right
-        eww open topcorner-right
-        eww update open_control_center=true
+        eww open control_center --arg monitor="0"
+        eww open corner-right --arg monitor="0"
+        eww open topcorner-right --arg monitor="0"
+        eww update open_cc=true
         ;;
 esac

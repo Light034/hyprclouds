@@ -1,3 +1,4 @@
+;; I've never seen this actually be used.
 (defwidget dock [] 
   (eventbox
     :class "dock"

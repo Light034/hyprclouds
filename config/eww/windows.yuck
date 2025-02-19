@@ -1,6 +1,9 @@
-(defwindow bar
-    :monitor 0
+;; This defines the geometry for most modules, some need to be moved here, most notably the bar.
+;; ToDo: Change monitor to be a variable, pixels to percentage.
+(defwindow bar [ monitor ]
+    :monitor "${monitor}"
     :geometry (geometry :width "100%"
+    :height "0.5%"
                         :anchor "bottom center"
                     )
     :exclusive true
@@ -8,73 +11,80 @@
     (bar)
 )
 
-(defwindow control_center
-    :monitor 0
+(defwindow control_center [ monitor ]
+    :monitor "${monitor}"
     :stacking "fg"
     :geometry (geometry
                     :anchor "bottom right"
-                    :x "-12"
-                    :y "-12"
-                    :width "2px"
-                    :height "2px"
+                    :x "-0.6%"
+                    :y "-1%"
+                    :width "20%"
+                    :height "45%"
                 )
     :namespace "eww"
-    (control_center)
-)
+    (box :orientation "v" :space-evenly false
+    (revealer :transition "crossfade" :reveal {open_cc} :duration {ANIM_DURATION}
+    (control_center))
+    )
+    )
 
 
-(defwindow launcher
-    :monitor 0
+
+(defwindow launcher [ monitor ]
+    :monitor "${monitor}"
     :stacking "overlay"
     :geometry (geometry
                     :anchor "center"
-                    :width "2px"
-                    :height "2px"
+                    :width "0.0015%"
+                    :height "0.0026%"
                 )
-    :focusable true
     :namespace "eww"
     (launcher)
 )
 
-(defwindow notifications_popup
-    :monitor 0
+(defwindow notifications_popup [ monitor ]
+    :monitor "${monitor}"
     :stacking "overlay"
     :geometry (geometry
                     :anchor "top right"
-                    :width "2px"
-                    :height "2px"
+                    :width "0.0015%"
+                    :height "0.0026%"
                     :y "0px"
                 )
     :namespace "eww"
     (notifications_popup_widget)
 )
 
-(defwindow osd
-    :monitor 0
+(defwindow osd [ monitor ]
+    :monitor "${monitor}" 
     :stacking "overlay"
     :geometry (geometry 
                     :anchor "bottom center"
                     :y  "-13"
-                    :width "2px"
-                    :height "2px"
+                    :width "0.0015%"
+                    :height "0.0026%"
                 )
     :namespace "eww"
     (volume_osd)
 )
-(defwindow powermenu
-    :monitor 0
+(defwindow powermenu [ monitor ]
+    :monitor "${monitor}"
     :stacking "fg"
     :geometry (geometry 
-    :y "300px"
-                    :anchor "bottom center"
+    :y "-1.4%"
+                    :anchor "top center"
                     :width "80%"
                     :height "100%")
     :namespace "eww"
-    (powermenu)
+    (box :orientation "v" :space-evenly false
+    (revealer :transition "slidedown" :reveal {open_powermenu} :duration {ANIM_DURATION}
+        (powermenu)
+        )
+    )
 )
 
-(defwindow recorder_menu
-    :monitor 0
+(defwindow recorder_menu [ monitor ]
+    :monitor "${monitor}"
     :stacking "overlay"
     :geometry (geometry 
                     :anchor "center"
@@ -84,21 +94,21 @@
     (recorder_menu)
 )
 
-(defwindow tray
-    :monitor 0
+(defwindow tray [ monitor ]
+    :monitor "${monitor}"
     :stacking "overlay"
     :geometry (geometry 
                     :anchor "bottom left"
-                    :width "2px"
-                    :height "2px"
+                    :width "0.0015%"
+                    :height "0.0026%"
                     :x "82%"
                 )
     :namespace "eww"
     (tray)
 )
 
-(defwindow bg_widgets
-    :monitor 0
+(defwindow bg_widgets [ monitor ]
+    :monitor "${monitor}"
     :stacking "bg"
     :geometry (geometry 
                     :anchor "center"

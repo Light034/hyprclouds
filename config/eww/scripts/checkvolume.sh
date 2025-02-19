@@ -5,9 +5,9 @@ vol="$(eww get volume)"
 
 # Function to open widgets
 open_widgets() {
-  eww open osd
-  eww open volcorner-right
-  eww open volcorner-left
+  eww open osd --arg monitor="0"
+  eww open volcorner-right --arg monitor="0"
+  eww open volcorner-left --arg monitor="0"
 
   eww update open_osd=true
   eww update open_volcorner_right=true

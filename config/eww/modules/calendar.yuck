@@ -1,23 +1,28 @@
+;; This is the main calendar module.
+;; ToDo: fix path to allow changes in the location of the eww config, preferably using a global variable.
 (include "./modules/calendar/dateCalendar.yuck")
 (include "./modules/calendar/eventManager.yuck")
+;; This is the pfp widget, this should go into pfp.yuck, but for now it's here.
 (defwidget pfp []
     (box :orientation "h" :space-evenly true :class "pfp-box"
         (box :orientation "h" :space-evenly false :halign "start"
             (box :orientation "h" :space-evenly false :class "pfp-image")
-            (button :class "name" :onclick "eww open powermenu" "アルファン |")
-                (button :class "lowername" :onclick "eww open powermenu" "re/Hyprland")
+            ;; Here you can set your name and your status, I would like to make this dynamic in the future based on the current logged in user.
+            (button :class "name" :onclick "~/.config/eww/scripts/powermenu.sh" "Gonzalo")
+                (button :class "lowername" :onclick "~/.config/eww/scripts/powermenu.sh" "Active")
               
         )
     ) )
-(defwindow calendar []
+;; Calendar geometry things.
+(defwindow calendar [ monitor ]
   :geometry (geometry
-    :x "-9px"
+    :x "-0.6%"
     :y "-0px"
-    :width "250px"
+    :width "10%"
     :anchor "bottom left"
   )
-  
-  :monitor 0
+  ;; ToDo: change monitor to be a global variable.
+  :monitor "${monitor}"
   :windowtype "dock"
   :stacking "fg"
   

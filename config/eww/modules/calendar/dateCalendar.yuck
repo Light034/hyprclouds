@@ -1,3 +1,4 @@
+;; Description: A simple calendar widget that displays the current date and a calendar
 (defwidget dateCalendar []
   (box
     :orientation "v"

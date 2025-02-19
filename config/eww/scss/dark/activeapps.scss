@@ -1,0 +1,22 @@
+.activeapps {
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    margin: 0 1rem;
+    background-color: $dark-on-secondary;
+}
+
+.app_item {
+    margin: 0 0.1rem;
+    transition: 0.5s;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    background-color: $dark-inverse-primary;
+    &.active{
+        background-color: $dark-primary;
+        padding: 0.2rem 1rem;
+    }
+}
+
+.app_item:hover {
+    background-color: mix($dark-inverse-primary, $dark-on-surface, 70%);
+}

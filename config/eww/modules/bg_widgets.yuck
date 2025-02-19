@@ -1,11 +1,12 @@
+;; What does this do ?
 (defwidget bg_widgets []
         (box :orientation "h" :space-evenly false :valign "center"
         (pfp)
         (clock)
-        (day)
-        (month-date)
-        (musicinfo)
-        (info)
+;        (day)
+;        (month-date)
+;        (musicinfo)
+        (info)  
 
         )
  )

@@ -1,16 +1,19 @@
 #!/bin/bash
-pkill eww
+
+killall wf-getapps
+killall eww
+$XDG_CONFIG_HOME/eww/scripts/display_geometry.sh
+$XDG_CONFIG_HOME/eww/scripts/taskbar.sh
+#$XDG_CONFIG_HOME/eww/scripts/taskbar_height.sh
 eww daemon
-eww open bar
-eww open topside-edge
-eww open leftside-edge
-eww open rightside-edge
-eww open topbgcorner-left
-eww open topbgcorner-right
-eww open notifications_popup
-eww open taskbar-left
+eww open bar --arg monitor="0"
+#eww open topside-edge --arg monitor="0"
+#eww open leftside-edge --arg monitor="0"
+#eww open rightside-edge --arg monitor="0"
+#eww open topbgcorner-left --arg monitor="0"
+#eww open topbgcorner-right --arg monitor="0"
+eww open notifications_popup --arg monitor="0"
+#eww open taskbar-left --toggle --arg monitor="0"
 python3 ~/.config/eww/scripts/notifications.py &
-eww open bgcorner-right
-eww open bgcorner-left
-eww open corner1
-eww open corner2
+#eww open bgcorner-right --arg monitor="0"
+#eww open bgcorner-left --arg monitor="0"

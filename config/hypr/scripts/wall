@@ -11,10 +11,10 @@ hellwal -i "$1"
 
 wal -i "$1" #-b "#000000"
 
-python /home/alien/.cache/material-you/c1.py
-python /home/alien/.cache/material-you/c.py
-python /home/alien/.cache/material-you/c2.py
-python /home/alien/.cache/material-you/c3.py
+python /home/gonzalo/.cache/material-you/c1.py
+python /home/gonzalo/.cache/material-you/c.py
+python /home/gonzalo/.cache/material-you/c2.py
+python /home/gonzalo/.cache/material-you/c3.py
 
 cp -f .cache/material-you/colors.json .cache/wal/
 cp -f .cache/material-you/colors.css .cache/wal/
@@ -25,32 +25,32 @@ cp -f .cache/material-you/colors .cache/wal/
 # sed -i 's/^color7 .*/color7 = "#ffffff"/' "${HOME}/.cache/wal/colors-waybar.css"
 
 swaync-client -rs "$1"
-python3 /home/alien/.config/hypr/scripts/parse_css_to_hyprland.py "$1"
+python3 /home/gonzalo/.config/hypr/scripts/parse_css_to_hyprland.py "$1"
 
 # Determine theme from current_theme.txt
-current_theme=$(cat /home/alien/.config/kitty/current_theme.txt)
+current_theme=$(cat /home/gonzalo/.config/kitty/current_theme.txt)
 
 if [ "$current_theme" == "dark" ]; then
-    /home/alien/.config/hypr/scripts/rofi_light_dark/rofi_dark.sh "$1"
+    /home/gonzalo/.config/hypr/scripts/rofi_light_dark/rofi_dark.sh "$1"
 else
-    /home/alien/.config/hypr/scripts/rofi_light_dark/rofi_light.sh "$1"
+    /home/gonzalo/.config/hypr/scripts/rofi_light_dark/rofi_light.sh "$1"
 fi
 
 pywalfox update
 wal-telegram -r
-python /home/alien/.config/hypr/scripts/material-colors/export-colors.py
-python /home/alien/.config/hypr/scripts/material-colors/export-colorsW.py
-python /home/alien/.config/hypr/scripts/kitty-colors/kitty-dark.py
-python /home/alien/.config/hypr/scripts/kitty-colors/kitty-light.py
-python /home/alien/.config/hypr/scripts/kitty-colors/selector.py
-/home/alien/.config/hypr/scripts/Discord/dark.sh
-/home/alien/.cache/material-you/color-generator.sh
-wal-telegram --palette '/home/alien/.cache/material-you/colors.sh'
+python /home/gonzalo/.config/hypr/scripts/material-colors/export-colors.py
+python /home/gonzalo/.config/hypr/scripts/material-colors/export-colorsW.py
+python /home/gonzalo/.config/hypr/scripts/kitty-colors/kitty-dark.py
+python /home/gonzalo/.config/hypr/scripts/kitty-colors/kitty-light.py
+python /home/gonzalo/.config/hypr/scripts/kitty-colors/selector.py
+/home/gonzalo/.config/hypr/scripts/Discord/dark.sh
+/home/gonzalo/.cache/material-you/color-generator.sh
+wal-telegram --palette '/home/gonzalo/.cache/material-you/colors.sh'
 
 # Define the Rofi wallpaper path
-ROFI_WALLPAPER_PATH="/home/alien/.config/rofi/launchers/type-6/current-wallpaper.png"
-FIREFOX_WALLPAPER_PATH="/home/alien/.mozilla/firefox/n5hfb426.new1/chrome/wallpaper.png"
-FIREFOX_LIGHT_WALLPAPER_PATH="/home/alien/.mozilla/firefox/n5hfb426.new1/chrome/wallpaper-light.png"
+ROFI_WALLPAPER_PATH="/home/gonzalo/.config/rofi/launchers/type-6/current-wallpaper.png"
+FIREFOX_WALLPAPER_PATH="/home/gonzalo/.mozilla/firefox/n5hfb426.new1/chrome/wallpaper.png"
+FIREFOX_LIGHT_WALLPAPER_PATH="/home/gonzalo/.mozilla/firefox/n5hfb426.new1/chrome/wallpaper-light.png"
 
 # Remove the old current wallpaper if it exists
 if [ -e "$ROFI_WALLPAPER_PATH" ]; then

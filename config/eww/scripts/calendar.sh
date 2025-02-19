@@ -8,5 +8,5 @@ if [[ $(eww get open_calendar) == "true" ]]; then
 else
     # Open the calendar if it is not open
     eww update open_calendar=true
-    eww open calendar
+    eww open calendar --arg monitor="0"
 fi

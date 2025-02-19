@@ -48,7 +48,7 @@ def get_default_waybar_paths():
         f"{home}/.config/gtk-4.0/colors1.css",
          f"{home}/.config/gtk-3.0/colors.css",
         f"{home}/.config/material-you/waybar-colors.css",
-        f"/home/alien/.themes/Material-wal/gtk-3.0/colors.css"
+        f"/home/gonzalo/.themes/Material-wal/gtk-3.0/colors.css"
     ]
 
 def ensure_directory_exists(filepath):

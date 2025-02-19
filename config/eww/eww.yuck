@@ -1,7 +1,10 @@
+;; Main yuck file that includes all the other yuck files.
+
 (include "variables.yuck")
 (include "windows.yuck")
 
-
+(include "modules/activeapps.yuck")
+(include "modules/bg_widgets.yuck")
 (include "modules/bar.yuck")
 (include "modules/notifications_popup.yuck")
 (include "modules/launcher.yuck")
@@ -17,7 +20,7 @@
 (include "modules/picker.yuck")
 
 (include "modules/logo.yuck")
-(include "modules/workspaces.yuck")
+;; (include "modules/workspaces.yuck")
 (include "modules/taskbar.yuck")
 (include "modules/tray.yuck")
 (include "modules/language.yuck")

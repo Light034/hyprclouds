@@ -1,4 +1,5 @@
-
+;; These are the quick settings displayed inside control center. Fixes needed
+;; ToDo: Update network logic, update paths, find dependencies.
 (defwidget quick_settings []
     (box :orientation "v" :class "quick_settings_box" :space-evenly true
         (box :orientation "h" :space-evenly true
@@ -7,7 +8,7 @@
         )
         (box :orientation "h" :space-evenly true
             (theme)
-            ( bluetooth)
+            (bluetooth)
         )
     )
 )
@@ -32,8 +33,8 @@
 
 (defwidget network []
     (quick_settings_button  :condition {network.essid == "lo"} 
-                            :action {network.essid == "lo" ? "XDG_CURRENT_DESKTOP='gnome' gnome-control-center wifi &" : "nmcli connection down id '${network.essid}'"}
-                            :icon {network.essid == "lo" ? "󰤭" : network.signal == "" ? "󰤩" : network.signal < 25 ? "󰤟" : network.signal < 50 ? "󰤢" : network.signal < 75 ? "󰤥" : "󰤨"}
+                            :action {network.essid == "lo" ? "nm-connection-editor" : "nmcli connection down id '${network.essid}'"}
+                            :icon {network.essid == "lo" ? "󰤭" : network.type == "bridge" ? "󰈀" : network.type == "ethernet" ? "󰈀" : network.essid == "bridge" ? "󰈀" : network.signal == "" ? "󰤩" : network.signal < 25 ? "󰤟" : network.signal < 50 ? "󰤢" : network.signal < 75 ? "󰤥" : "󰤨"}
                             :label {network.essid == "lo" ? "Not connected" : network.essid}
                             :class "left-top-plite"
     )
@@ -50,7 +51,7 @@
 
 (defwidget recorder []
     (quick_settings_button  :condition {recording == false} 
-                            :action {recording == false ? "eww open recorder_menu" : "pkill -INT wf-recorder && notify-send 'Recording saved'"}
+                            :action {recording == false ? "eww open recorder_menu --arg monitor=\"0\"" : "pkill -INT wf-recorder && notify-send 'Recording saved'"}
                             :icon "󰻃"
                             :label "Recording"
                             :class "right-bottom-plite"
@@ -67,7 +68,7 @@
 
 (defwidget theme []
     (quick_settings_button  :condition {current_theme == "light"} 
-                            :action "/home/alien/.config/hypr/scripts/dark_light --toggle &"
+                            :action "/home/gonzalo/.config/hypr/scripts/dark_light --toggle &"
                             :icon "󱎖"
                             :label "Dark mode"
                             :class "left-bottom-plite"

@@ -1,4 +1,4 @@
-@import "colors.scss";
+@import "/home/gonzalo/.config/material-you/colors.scss";
 * {
     all: unset;
     font-family: "SF Pro Display Bold";
@@ -16,7 +16,7 @@
 @import "scss/dark/notifications_popup.scss";
 
 
-
+@import "scss/dark/activeapps.scss";
 @import "scss/dark/language.scss";
 @import "scss/dark/taskbar.scss";
 @import "scss/dark/clock.scss";
