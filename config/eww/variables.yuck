@@ -1,14 +1,29 @@
-
-(defvar open_control_center false)
+;; Defines global variables for eww. To be expanded.
+(defvar monitor "0")
+(defvar open_cc false)
+(defvar open_cc_items true)
 (defvar open_osd false)
 (defvar open_launcher false)
 (defvar open_tray false)
-(defvar clipboard "[]")
+(defvar clipboard "[{}]")
 (defvar brightness false)
 (defvar ANIM_DURATION "500ms")
 
 (defvar recorder_audio false)
 (defvar recorder_region false)
+
+(defvar open_powermenu false)
+(defvar open_taskbar false)
+
+
+; Corner variables
+;; TCBO = Taskbar Corner Bottom Offset
+;; Defaults to a value of 1 pinned app icon height
+(defvar taskbar_offset "450")
+;; TCTO = Taskbar Corner Top Offset
+
+;; Chosen monitor
+
 
 ; POLLS
 
@@ -17,19 +32,21 @@
 
 ; LISTENS
 
+
+
 (deflisten network :initial '{"essid": "lo", "signal": ""}'
 "scripts/network.sh")
 
-(deflisten kb_layout :initial "en"
-"scripts/get_kb_layout.sh")
+(defvar kb_layout "en")
+;(deflisten kb_layout :initial "en" "scripts/get_kb_layout.sh")
 
 (deflisten volume :initial "0"
 "scripts/volume.sh")
 
-(deflisten current_workspace :initial "1"
-"scripts/get-active-workspace.sh")
+;(defvar current_workspace "1")
+;(deflisten current_workspace :initial "1" "scripts/get-active-workspace.sh")
 
-(deflisten mpris :initial "{}"
+(deflisten mpris :initial '{}'
 "scripts/mpris.sh")
 
 (deflisten mpris_positions :initial "{}"
@@ -38,7 +55,7 @@
 (deflisten do-not-disturb :initial false
 "scripts/notifications.sh getdnd")
 
-(deflisten workspaces :initial "[]" 
+(deflisten workspaces :initial "[{}]" 
 "scripts/get-workspaces.sh")
 
 (deflisten weather :initial "null"
@@ -52,4 +69,3 @@
 
 (deflisten apps :initial "{}"
 "scripts/apps.py")
-

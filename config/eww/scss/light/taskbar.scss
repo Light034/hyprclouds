@@ -17,14 +17,14 @@
 .taskbar-item:hover {
     background-color: mix($light-surface, $light-on-surface, 70%);
 }
-.corner1 {
+.taskbar_corner_top {
     background-color: transparent;
     padding: 25px;
     border-radius: 100%;
     box-shadow: -25px 30px 0px 0px $light-surface-container-highest;
   
 }
-.corner2 {
+.taskbar_corner_bottom {
     background-color: transparent;
     padding: 25px;
     border-radius: 100%;

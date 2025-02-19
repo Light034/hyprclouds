@@ -1,41 +1,59 @@
-(defwindow taskbar-left
+;; This displays pinned applications.
+;; ToDo: change hardcoded pixels to percentages to allow for scaling.
+
+(defwindow taskbar-left [ monitor ]
   :stacking "overlay"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-              :x "-4px"        ;; Align to the left edge of the screen
-              :y "50%"        ;; Center vertically
-              :anchor "center left") ;; Anchor to the left-center of the screen
+              :x "0%"             ;; Align to the left edge of the screen
+              :y "0%"               ;; Center vertically
+              :anchor "center left"  ;; Anchor to the left-center of the screen
+            )
    (box :orientation "v" 
          :space-evenly false 
          :class "taskbar-window"
-       (taskbar)))
-
-       (defwindow corner2
-  :stacking "overlay"
-  :monitor 0
-  :geometry (geometry 
-               :x "-4px"  
-              :y "241px"
-              :anchor "bottom left")
-  (box :class "corner2")  
+         (revealer :transition "slideright" :reveal {open_taskbar} :duration {ANIM_DURATION}
+            (taskbar)
+          )
+    )        
 )
 
-(defwindow corner1
+(defwindow taskbar_corner_bottom [ taskbar_offset monitor ]
   :stacking "overlay"
-  :monitor 0
+  :monitor "${monitor}"
   :geometry (geometry 
-                :x "-4px"  
-              :y "241px"
-              :anchor "top left")
-  (box :class "corner1")  
+               :x "-0.3%"  
+              :y "${taskbar_offset}"
+             :anchor "left bottom")
+             (box :orientation "v"
+             (revealer :transition "slideright" :reveal {open_taskbar} :duration {ANIM_DURATION}
+               (box :class "taskbar_corner_bottom")
+             )
+           )  
+)
+
+(defwindow taskbar_corner_top [ taskbar_offset monitor ]
+  :stacking "overlay"
+  :monitor "${monitor}"
+  :geometry (geometry 
+                :x "-0.3%"  
+              :y "${taskbar_offset}px"
+              :anchor "left top")
+              :width "20px"
+              :height "20px"
+  (box :orientation "v"
+    (revealer :transition "slideright" :reveal {open_taskbar} :duration {ANIM_DURATION}
+      (box :class "taskbar_corner_top")
+    )
+  )  
 )
 
 
 (defwidget taskbar []
-    (box :orientation "v" :space-evenly false :class "taskbar"
+    (box :orientation "v" :space-evenly false :spacing 5 :class "taskbar"
         (for app in {apps.pinned}
             (button :class "taskbar-item" :onclick "cd ~ && gtk-launch ${app.desktop} & scripts/toggle_launcher.sh close &"
-                (image :path {app.icon} :image-width 32 :image-height 32)
+                (image :path {app.icon} :image-width 42 :image-height 42)
             )
         )
     )
